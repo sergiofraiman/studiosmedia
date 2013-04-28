@@ -1,0 +1,23 @@
+﻿<%= form_for @capa, :html => { :class => "stdform" } do |f| %>
+  <% if @capa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@capa.errors.count, "error") %> prohibited this capa from being saved:</h2>
+
+      <ul>
+      <% @capa.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+	<div class="widget">
+            <h4 class="widgettitle">CONTEÚDO</h4>
+            <div class="widgetcontent">
+                <div class="field">
+    <%= f.text_area :content , :html => { :class => "span5", :cols => "80" }   %>
+  </div>
+    <%= f.submit 'Salvar', :class => "btn btn-primary"	%>
+<% end %>
+<%= link_to 'Voltar', capas_path, :class => "btn btn-warning" %>
+            </div><!--widgetcontent-->
+  

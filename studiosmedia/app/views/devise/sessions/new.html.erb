@@ -1,0 +1,41 @@
+<body class="loginpage">
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :id => 'login')  do |f| %>
+<div class="loginpanel">
+    <div class="loginpanelinner">
+        <div class="logo animate0 bounceIn"><%= image_tag "logo.png" %></div>
+
+            <div class="inputwrapper login-alert">
+                <div class="alert alert-error">Invalid username or password</div>
+            </div>
+            <div class="inputwrapper animate1 bounceIn">
+            
+  <%= f.email_field :email, :autofocus => true, :id=> "email" %>
+
+            </div>
+            <div class="inputwrapper animate2 bounceIn">
+                <%= f.password_field :password %>
+            </div>
+            <div class="inputwrapper animate3 bounceIn">
+               <%= f.submit 'Login', :style => "margin: 0 10px" %>
+            </div>
+			
+      
+    </div><!--loginpanelinner-->
+</div><!--loginpanel-->
+
+<div class="loginfooter">
+    <p>&copy; 2013. StudiosMedia Dashboard. Todos os direitos reservados.</p>
+</div>
+
+</body>
+
+ 
+
+ <div class="hidden">
+  <% if devise_mapping.rememberable? -%>
+    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+  <% end -%>
+</div>
+ 
+<% end %>
+
